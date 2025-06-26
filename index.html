@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chamika Thennakoon – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#f9fafb',
+            text: '#1e293b',
+            accent: '#2563eb',
+            muted: '#64748b',
+            highlight: '#facc15'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-background text-text min-h-screen flex flex-col relative">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-white shadow-sm">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl font-extrabold text-accent">Portfolio</span>
+        <!-- <span class="text-xl font-semibold tracking-wide">Thennakoon</span> -->
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-accent font-semibold">Home</a>
+        <a href="about.html" class="hover:text-accent transition">About</a>
+        <a href="projects.html" class="hover:text-accent transition">Projects</a>
+        <a href="resume.html" class="hover:text-accent transition">Resume</a>
+
+      </nav>
+
+      <!-- Contact Button -->
+      <a href="contact.html" class="hidden md:inline-block px-5 py-2 bg-accent text-white rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">Contact</a>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 rounded hover:bg-gray-100 transition" aria-label="Open Menu">
+        <!-- TODO: Implement mobile menu functionality -->
+        <svg class="w-6 h-6 text-text" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+  <section class="relative container mx-auto flex flex-col-reverse md:flex-row items-center px-4 py-20 gap-12 rounded-xl overflow-hidden min-h-[500px]" style="min-height:60vh;">
+    
+    <!-- Background Image & Overlay -->
+    <div class="absolute inset-0 w-full h-full z-0">
+      <img src="assets/img/Image_fx.jpg" alt="Background" class="w-full h-full object-cover"/>
+      <div class="absolute inset-0 bg-white/80"></div>
+    </div>
+
+    <!-- Left: Text -->
+    <div class="flex-1 z-10">
+      <span class="inline-block bg-highlight text-text text-xs font-semibold px-3 py-1 rounded mb-4 uppercase tracking-wider">Now Available</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        Hi, I'm <span class="text-accent">Chamika Thennakoon</span>
+      </h1>
+      <p class="text-muted text-lg leading-relaxed mb-8 max-w-xl">
+        Passionate about software engineering and AI, I’m focused on building intelligent, real-world applications. With hands-on experience in AI projects and a strong foundation in software development, I aim to create innovative and impactful tech solutions that solve real problems and drive progress.
+      </p>
+
+      <!-- About Button + Socials -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="contact.html" class="bg-accent text-white px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform">
+          About Me
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/chamika-11" target="_blank" class="hover:scale-110 transition-transform">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8"/>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/chamika-thennakoon-8476882b6" target="_blank" class="hover:scale-110 transition-transform">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Profile Image -->
+    <div class="flex-1 flex justify-center items-center z-10">
+      <div class="bg-white rounded-2xl shadow-xl p-2 sm:p-4 md:p-6 border border-gray-200 max-w-xs">
+        <img src="assets/img/IMG_20250510_142607_225.png" alt="Chamika Thennakoon profile photo"
+             class="rounded-2xl object-cover w-full h-auto"/>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+
+  <!-- Footer (Optional) -->
+  <footer class="text-center py-6 text-sm text-muted bg-white border-t">
+    © 2025. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/scripts.js"></script>
+  <style>
+    .page-transition-fade {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #f9fafb;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .page-transition-fade.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+  <div id="pageTransition" class="page-transition-fade"></div>
+  <script>
+    // Simple smooth fade page transition
+    const transition = document.getElementById('pageTransition');
+    function showTransition(cb) {
+      transition.classList.add('active');
+      setTimeout(cb, 400);
+    }
+    function hideTransition() {
+      transition.classList.remove('active');
+    }
+    window.addEventListener('DOMContentLoaded', hideTransition);
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !link.hasAttribute('target')) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showTransition(() => {
+            window.location = href;
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
