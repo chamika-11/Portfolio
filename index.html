@@ -6,6 +6,7 @@
   <title>Chamika Thennakoon – Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <script>
     tailwind.config = {
       theme: {
@@ -41,15 +42,13 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="index.html" class="text-accent font-semibold">Home</a>
-        <a href="about.html" class="hover:text-accent transition">About</a>
-        <a href="projects.html" class="hover:text-accent transition">Projects</a>
-        <a href="resume.html" class="hover:text-accent transition">Resume</a>
-
+        <a href="#home" class="text-accent font-semibold">Home</a>
+        <a href="#about" class="hover:text-accent transition">About</a>
+        <a href="#projects" class="hover:text-accent transition">Projects</a>
       </nav>
 
       <!-- Contact Button -->
-      <a href="contact.html" class="hidden md:inline-block px-5 py-2 bg-accent text-white rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">Contact</a>
+      <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-accent text-white rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">Contact</a>
 
       <!-- Mobile Menu Button -->
       <button id="mobileMenuBtn" class="md:hidden p-2 rounded hover:bg-gray-100 transition" aria-label="Open Menu">
@@ -68,63 +67,369 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
-      <a href="index.html" class="text-accent font-semibold">Home</a>
-      <a href="about.html" class="hover:text-accent transition">About</a>
-      <a href="projects.html" class="hover:text-accent transition">Projects</a>
-      <a href="resume.html" class="hover:text-accent transition">Resume</a>
-      <a href="contact.html" class="px-5 py-2 bg-accent text-white rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">Contact</a>
+      <a href="#home" class="text-accent font-semibold">Home</a>
+      <a href="#about" class="hover:text-accent transition">About</a>
+      <a href="#projects" class="hover:text-accent transition">Projects</a>
+      <a href="#contact" class="px-5 py-2 bg-accent text-white rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">Contact</a>
     </div>
     <div class="flex-1" id="mobileMenuOverlay"></div>
   </div>
 
   <!-- Hero Section -->
-  <main class="flex-grow">
-  <section class="relative container mx-auto flex flex-col-reverse md:flex-row items-center px-4 py-20 gap-12 rounded-xl overflow-hidden min-h-[500px]" style="min-height:60vh;">
-    
-    <!-- Background Image & Overlay -->
-    <div class="absolute inset-0 w-full h-full z-0">
-      <img src="assets/img/Image_fx.jpg" alt="Background" class="w-full h-full object-cover"/>
-      <div class="absolute inset-0 bg-white/80"></div>
-    </div>
+  <main class="flex-grow" id="home">
+    <section class="relative container mx-auto flex flex-col-reverse md:flex-row items-center px-4 py-20 gap-12 rounded-xl overflow-hidden min-h-[500px]" style="min-height:60vh;">
+      
+      <!-- Background Image & Overlay -->
+      <div class="absolute inset-0 w-full h-full z-0">
+        <img src="assets/img/Image_fx.jpg" alt="Background" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-white/80"></div>
+      </div>
 
-    <!-- Left: Text -->
-    <div class="flex-1 z-10">
-      <span class="inline-block bg-highlight text-text text-xs font-semibold px-3 py-1 rounded mb-4 uppercase tracking-wider">Now Available</span>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        Hi, I'm <span class="text-accent">Chamika Thennakoon</span>
-      </h1>
-      <p class="text-muted text-lg leading-relaxed mb-8 max-w-xl">
-        Passionate about software engineering and AI, I’m focused on building intelligent, real-world applications. With hands-on experience in AI projects and a strong foundation in software development, I aim to create innovative and impactful tech solutions that solve real problems and drive progress.
-      </p>
+      <!-- Left: Text -->
+      <div class="flex-1 z-10">
+        <span class="inline-block bg-highlight text-text text-xs font-semibold px-3 py-1 rounded mb-4 uppercase tracking-wider">Now Available</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          Hi, I'm <span class="text-accent">Chamika Thennakoon</span>
+        </h1>
+        <p class="text-muted text-lg leading-relaxed mb-8 max-w-xl">
+          Passionate about software engineering and AI, I’m focused on building intelligent, real-world applications. With hands-on experience in AI projects and a strong foundation in software development, I aim to create innovative and impactful tech solutions that solve real problems and drive progress.
+        </p>
 
-      <!-- About Button + Socials -->
-      <div class="flex items-center gap-4 flex-wrap">
-        <a href="contact.html" class="bg-accent text-white px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform">
-          About Me
+        <!-- About Button + Socials -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 flex-wrap">
+          <a href="#about" class="bg-accent text-white px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform w-full sm:w-auto text-center">
+            About Me
+          </a>
+          <a href="assets/Chamika Thennakoon.pdf" download onclick="event.stopPropagation(); event.preventDefault(); fetch('assets/Chamika Thennakoon.pdf').then(resp => resp.blob()).then(blob => { const url = window.URL.createObjectURL(blob); const a = document.createElement('a'); a.style.display = 'none'; a.href = url; a.download = 'Chamika Thennakoon.pdf'; document.body.appendChild(a); a.click(); window.URL.revokeObjectURL(url); document.body.removeChild(a); });" class="bg-highlight text-text px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform w-full sm:w-auto text-center">
+            Download Resume
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/chamika-11" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8"/>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/chamika-thennakoon-8476882b6" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8"/>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="flex-1 flex justify-center items-center z-10">
+        <div class="bg-white rounded-2xl shadow-xl p-2 sm:p-4 md:p-6 border border-gray-200 max-w-xs">
+          <img src="assets/img/IMG_20250510_142607_225.png" alt="Chamika Thennakoon profile photo"
+               class="rounded-2xl object-cover w-full h-auto"/>
+        </div>
+      </div>
+
+    </section>
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-20 scroll-mt-20">
+      <div class="max-w-5xl mx-auto">
+        <span class="inline-block bg-highlight text-text text-xs font-semibold px-3 py-1 rounded mb-4 uppercase tracking-wider">About Me</span>
+        <div class="flex flex-col md:flex-row gap-12 items-start">
+          <div class="md:w-1/3">
+            <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-accent mx-auto">
+              <img src="assets/img/IMG_20250510_142607_225.jpg" alt="Chamika Thennakoon profile photo" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <h1 class="text-3xl font-bold mb-6 text-text">My Journey</h1>
+            <p class="text-muted text-lg leading-relaxed mb-8">
+              As a passionate Software Engineer and AI enthusiast, I’ve dedicated my career to building intelligent solutions that make a difference. With a strong foundation in both theoretical computer science and practical software development, I bring a unique perspective to every project I undertake.
+            </p>
+            <h2 class="text-2xl font-bold mb-4 text-text">Tech Stack</h2>
+            <div class="space-y-6">
+              <!-- Languages -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Languages</h3>
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-java-plain colored text-4xl"></i>
+                    <p>Java</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" class="w-12 h-12 object-contain" />
+                    <p>Python</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-javascript-plain colored text-4xl"></i>
+                    <p>JavaScript</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-html5-plain colored text-4xl"></i>
+                    <p>HTML5</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-css3-plain colored text-4xl"></i>
+                    <p>CSS3</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-c-plain colored text-4xl"></i>
+                    <p>C</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-cplusplus-plain colored text-4xl"></i>
+                    <p>C++</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Databases -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Databases</h3>
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-mysql-plain colored text-4xl"></i>
+                    <p>MySQL</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-mongodb-plain colored text-4xl"></i>
+                    <p>MongoDB</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Libraries -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Libraries</h3>
+                <div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                  <div class="flex flex-col items-center">
+                    <img src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch" class="w-12 h-12 object-contain" />
+                    <p>PyTorch</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="assets/icons/onnx.jpeg" alt="ONNX" class="w-12 h-12 object-contain" />
+                    <p>ONNX</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="assets/icons/langc.png" alt="LangChain" class="w-12 h-12 object-contain" />
+                    <p>LangChain</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Frameworks -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Frameworks</h3>
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-react-original colored text-4xl"></i>
+                    <p>React</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-nodejs-plain colored text-4xl"></i>
+                    <p>Node.js</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-express-original colored text-4xl"></i>
+                    <p>Express</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit" class="w-12 h-12 object-contain" />
+                    <p>Streamlit</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Development Tools -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Development Tools</h3>
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-4">
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-vscode-plain colored text-4xl"></i>
+                    <p>VS Code</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="assets/icons/download.jpeg" alt="Microsoft Copilot Studio" class="w-12 h-12 object-contain" />
+                    <p>Copilot Studio</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-eclipse-plain colored text-4xl"></i>
+                    <p>Eclipse</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <i class="devicon-intellij-plain colored text-4xl"></i>
+                    <p>IntelliJ</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="assets/icons/download.png" alt="R Studio" class="w-12 h-12 object-contain" />
+                    <p>R Studio</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Apache_NetBeans_Logo.svg" alt="NetBeans" class="w-12 h-12 object-contain" />
+                    <p>NetBeans</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Infrastructure -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">System / Infrastructure</h3>
+                <p class="text-muted">MCP Servers</p>
+              </div>
+              <!-- Concepts -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Concepts / Architectures</h3>
+                <p class="text-muted">Object-Oriented Programming (OOP), Convolutional Neural Networks (CNN), Retrieval-Augmented Generation (RAG)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto px-4 py-20 scroll-mt-20">
+      <div class="max-w-6xl mx-auto">
+        <span class="inline-block bg-highlight text-text text-xs font-semibold px-3 py-1 rounded mb-4 uppercase tracking-wider">Projects</span>
+        <h1 class="text-3xl font-bold mb-8 text-text">Featured Projects</h1>
+        <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- AI Project -->
+          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img src="assets/img/healthcare.png" alt="AI Project" class="rounded-t-lg w-full h-48 object-cover" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold mb-2">Health Work Flow Management System</h2>
+              <p class="text-muted mb-4">
+                A full-stack healthcare management platform enabling CRUD operations for patient records, appointments, prescriptions, feedback, and medical documents.
+              </p>
+              <div class="healthcare-more hidden">
+                <strong>Key Features:</strong>
+                <ul class="list-disc list-inside mb-2">
+                  <li>Prescription Management: Doctors can create, view, and manage prescriptions with real-time drug name suggestions from an integrated drug database.</li>
+                  <li>AI Drug Safety System: AI checks patient medical history and provides real-time warnings to prevent risky drug interactions during prescription entry.</li>
+                  <li>Document Management: Patients can securely upload medical documents to the doctor.</li>
+                  <li>Online Appointment Booking: Patients can book consultations with doctors, selecting time slots and receiving auto-generated meeting within the system.</li>
+                  <li>AI-Powered Feedback Reports: Patients submit feedback post-consultation, and the system generates AI-driven reports to help doctors analyze trends.</li>
+                  <li>Doctor–Patient Chat System: Encrypted in-app messaging allows secure post-visit communication.</li>
+                  <li>Role-Based Access Control: System access is strictly separated by user roles.</li>
+                  <li>Cloud Storage: All sensitive documents and records are securely stored using scalable cloud platforms.</li>
+                </ul>
+                <strong>My Contribution:</strong>
+                <ul class="list-disc list-inside">
+                  <li>Developed the Prescription Management System</li>
+                  <li>Implemented the AI-based drug warning module using patient history</li>
+                  <li>Built the drug suggestion system integrated with an external drug database</li>
+                </ul>
+              </div>
+              <button type="button" class="healthcare-toggle text-accent underline mt-2">See more</button>
+              <div class="flex gap-3">
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">React</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">Node</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">Express</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">MongoDB</span>
+              </div>
+              <br>
+              <!-- <p class="text-sm font-semibold text-accent mb-2 uppercase tracking-wide">View Project</p> -->
+              <div class="mt-4 flex space-x-4">
+                <a href="https://github.com/chamika-11/Health_Flow_Management_System" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/chamika-thennakoon/" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Web App Project -->
+          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img src="assets/img/employee.jpg" alt="Web App Project" class="rounded-t-lg w-full h-48 object-cover" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold mb-2">Employee Management System</h2>
+              <p class="text-muted mb-4">Collaborated with a team to design and develop a web application using OOP and MVC architecture.
+                <span class="employee-more hidden">
+                  Implemented core features including employee data management, leave request processing, and role-based access control to ensure secure and efficient operations. Actively participated in design, development, and integration to deliver a modular and maintainable system.
+                </span>
+              </p>
+              <button type="button" class="employee-toggle text-accent underline mt-2">See more</button>
+              <div class="flex gap-3">
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">Java</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">MySQL</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">OOP</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">JavaScript</span>
+              </div>
+              <br>
+              <div class="mt-4 flex space-x-4">
+                <a href="https://github.com/chamika-11/Employee-MS-SLIIT" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/chamika-thennakoon/" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- ML Project -->
+          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img src="assets/img/Whisk_82264fae33.jpg" alt="ML Project" class="rounded-t-lg w-full h-48 object-cover" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold mb-2">Artificial Intelligence and Machine Learning Projects</h2>
+              <p class="text-muted mb-4">Developed an OCR system to extract data from scanned documents and integrated it with a large language model for intelligent query answering.
+                <span class="ml-more hidden">
+                  Built traditional and agentic Retrieval-Augmented Generation (RAG) chat systems for interactive user conversations with LLMs. Currently studying naive and hybrid RAG techniques for enhanced retrieval.
+                </span>
+              </p>
+              <button type="button" class="ml-toggle text-accent underline mt-2">See more</button>
+              <div class="flex gap-3">
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">Python</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">FastAPI</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">Tesseract</span>
+                <span class="text-xs bg-background text-muted px-2 py-1 rounded">LangChain</span>
+              </div>
+              <br>
+              <div class="mt-4 flex space-x-4">
+                <a href="https://github.com/chamika-11?tab=repositories" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/chamika-thennakoon/" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6 hover:scale-110 transition-transform" alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Resume Section -->
+    <section id="resume" class="container mx-auto px-2 sm:px-4 py-10 sm:py-20 scroll-mt-20 hidden">
+      <!-- This section is now hidden, as the download button is in the hero section -->
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-4 py-8 min-h-screen flex flex-col md:flex-row items-center md:items-start justify-center gap-8 scroll-mt-20">
+      <div class="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 max-w-md flex flex-col justify-center mx-auto md:mx-0">
+        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-text text-center md:text-left">Send a Message</h2>
+        <form class="space-y-4 sm:space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-text mb-1 sm:mb-2">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent text-sm" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-text mb-1 sm:mb-2">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent text-sm" placeholder="your.email@example.com" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-text mb-1 sm:mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent resize-none text-sm" placeholder="Your message here..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-accent text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform text-sm sm:text-base">Send Message</button>
+        </form>
+      </div>
+      <div class="w-full md:w-1/2 space-y-4 sm:space-y-6 max-w-md flex flex-col justify-center mx-auto md:mx-0">
+        <a href="https://github.com/chamika-11" target="_blank" class="flex flex-col items-center p-3 sm:p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8 mb-2 sm:w-10 sm:h-10 sm:mb-3"/>
+          <h2 class="font-bold text-text text-base sm:text-lg">GitHub</h2>
+          <p class="text-muted text-xs sm:text-sm">View My Code</p>
         </a>
-
-        <!-- GitHub -->
-        <a href="https://github.com/chamika-11" target="_blank" class="hover:scale-110 transition-transform">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8"/>
+        <a href="https://www.linkedin.com/in/chamika-thennakoon-8476882b6" target="_blank" class="flex flex-col items-center p-3 sm:p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8 mb-2 sm:w-10 sm:h-10 sm:mb-3"/>
+          <h2 class="font-bold text-text text-base sm:text-lg">LinkedIn</h2>
+          <p class="text-muted text-xs sm:text-sm">Connect with Me</p>
         </a>
-
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/chamika-thennakoon-8476882b6" target="_blank" class="hover:scale-110 transition-transform">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8"/>
+        <a href="mailto:thennakoonchamika11@gmail.com" class="flex flex-col items-center p-3 sm:p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <svg class="w-8 h-8 mb-2 sm:w-10 sm:h-10 sm:mb-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <h2 class="font-bold text-text text-base sm:text-lg">Email</h2>
+          <p class="text-muted text-xs sm:text-sm">Send a Message</p>
         </a>
       </div>
-    </div>
-
-    <!-- Right: Profile Image -->
-    <div class="flex-1 flex justify-center items-center z-10">
-      <div class="bg-white rounded-2xl shadow-xl p-2 sm:p-4 md:p-6 border border-gray-200 max-w-xs">
-        <img src="assets/img/IMG_20250510_142607_225.png" alt="Chamika Thennakoon profile photo"
-             class="rounded-2xl object-cover w-full h-auto"/>
-      </div>
-    </div>
-
-  </section>
-</main>
+    </section>
+  </main>
 
 
   <!-- Footer (Optional) -->
@@ -173,6 +478,48 @@
         mobileMenu.classList.add('hidden');
       });
     }
+
+    // See more/less toggle for healthcare project
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.healthcare-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const more = btn.parentElement.querySelector('.healthcare-more');
+          if (more.classList.contains('hidden')) {
+            more.classList.remove('hidden');
+            btn.textContent = 'See less';
+          } else {
+            more.classList.add('hidden');
+            btn.textContent = 'See more';
+          }
+        });
+      });
+      // See more/less toggle for employee project
+      document.querySelectorAll('.employee-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const more = btn.parentElement.querySelector('.employee-more');
+          if (more.classList.contains('hidden')) {
+            more.classList.remove('hidden');
+            btn.textContent = 'See less';
+          } else {
+            more.classList.add('hidden');
+            btn.textContent = 'See more';
+          }
+        });
+      });
+      // See more/less toggle for ML project
+      document.querySelectorAll('.ml-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const more = btn.parentElement.querySelector('.ml-more');
+          if (more.classList.contains('hidden')) {
+            more.classList.remove('hidden');
+            btn.textContent = 'See less';
+          } else {
+            more.classList.add('hidden');
+            btn.textContent = 'See more';
+          }
+        });
+      });
+    });
   </script>
   <style>
     .page-transition-fade {
